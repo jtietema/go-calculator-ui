@@ -1,0 +1,3 @@
+* go-calculator-ui
+
+A toy calculator to play with [[https://github.com/andlabs/ui/]] written in Go.
