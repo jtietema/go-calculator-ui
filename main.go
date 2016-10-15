@@ -1,9 +1,9 @@
 package main
 
 import (
-	"strconv"
 	"bytes"
-	
+	"strconv"
+
 	"github.com/andlabs/ui"
 )
 
@@ -49,7 +49,6 @@ func createMainWindow() {
 		row4.Append(createInputButton("0", display), true)
 		row4.Append(createCalcButton(display), false)
 
-		
 		window.SetChild(box)
 		window.OnClosing(closeMainWindow)
 		window.Show()
@@ -66,7 +65,7 @@ func createInputButton(n string, display *ui.Label) ui.Control {
 	})
 	return num1
 }
-	
+
 func createClearButton(display *ui.Label) ui.Control {
 	clear := ui.NewButton("C")
 	clear.OnClicked(func(*ui.Button) {
@@ -86,7 +85,7 @@ func createCalcButton(display *ui.Label) ui.Control {
 }
 
 const (
-	PLUS = iota
+	PLUS  = iota
 	MINUS = iota
 )
 
@@ -106,7 +105,7 @@ func calculate(expr string) string {
 			}
 		} else {
 			buffer.WriteRune(c)
-		}	
+		}
 	}
 	num, _ := strconv.Atoi(buffer.String())
 	result = operate(result, operation, num)
@@ -121,4 +120,3 @@ func operate(result int, operation int, value int) int {
 	}
 	return result
 }
-	
